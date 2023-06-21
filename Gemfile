@@ -19,9 +19,8 @@ gem "jsbundling-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem 'haml-rails'
+gem "sassc-rails"
 
-# Use Sass to process CSS
-# gem "sassc-rails"
 # gem "kredis"
 
 group :development, :test do
