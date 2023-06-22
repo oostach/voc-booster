@@ -1,6 +1,6 @@
 require:
   - rubocop-rails
-  - rubocop-rspec
+  # - rubocop-rspec
 
 AllCops:
   NewCops: enable
@@ -25,9 +25,6 @@ Style/RedundantConstantBase:
 Style/HashSyntax:
   EnforcedShorthandSyntax: either
 
-RSpec/MultipleExpectations:
-  Max: 3
-
 Style/BlockDelimiters:
   Enabled: true
   Exclude:
@@ -38,7 +35,10 @@ Lint/MissingSuper:
   Exclude:
     - app/components/**/*
 
-RSpec/ExampleLength:
-  Enabled: true
-  Exclude:
-    - spec/system/**/*
+# RSpec/ExampleLength:
+#   Enabled: true
+#   Exclude:
+#     - spec/system/**/*
+
+# RSpec/MultipleExpectations:
+#   Max: 3

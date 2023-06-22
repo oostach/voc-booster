@@ -35,7 +35,6 @@ group :development do
   gem "web-console"
   gem "rack-mini-profiler"
   gem 'rubocop-rails'
-  gem 'rubocop-rspec'
   gem 'haml_lint', require: false
 end
 
