@@ -13,14 +13,13 @@ gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
-
 gem "sprockets-rails"
-gem "jsbundling-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem 'haml-rails'
-gem "sassc-rails"
 
+# gem "jsbundling-rails"
+# gem "sassc-rails"
 # gem "kredis"
 
 group :development, :test do
