@@ -11,7 +11,7 @@
     "build": "node esbuild.mjs",
     "watch": "RAILS_ENV=development node esbuild.mjs",
     "ts-check": "tsc --project tsconfig.json --noEmit --watch --preserveWatchOutput",
-    "test": "jest"
+    "watch-test": "jest --watch"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
