@@ -35,6 +35,10 @@ Lint/MissingSuper:
   Exclude:
     - app/components/**/*
 
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: indented_internal_methods
+
 # RSpec/ExampleLength:
 #   Enabled: true
 #   Exclude:

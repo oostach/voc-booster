@@ -31,6 +31,7 @@ end
 
 group :development do
   gem 'solargraph'
+  gem 'solargraph-rails'
   gem "web-console"
   gem "rack-mini-profiler"
   gem 'rubocop-rails'
