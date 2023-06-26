@@ -16,16 +16,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_195205) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
-    t.string "password", limit: 64, null: false
-    t.string "password_confirmation", limit: 64, null: false
+    t.string "password_digest", null: false
     t.string "first_name", limit: 128, null: false
     t.string "last_name", limit: 128, null: false
     t.string "middle_name", limit: 128
-    t.datetime "date_of_birth"
+    t.date "date_of_birth"
     t.integer "gender"
     t.string "occupation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

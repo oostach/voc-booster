@@ -1,17 +1,10 @@
-= form_for @user do |f|
-  .form-group
-    = f.label :first_name, class: 'label'
-    = f.text_field :first_name, class: 'field'
-  .form-group
-    = f.label :last_name, class: 'label'
-    = f.text_field :last_name, class: 'field'
-  .form-group
-    = f.label :middle_name, class: 'label'
-    = f.text_field :middle_name, class: 'field'
-  .form-group
-    = f.label :email, class: 'label'
-    = f.text_field :email, class: 'field'
-  .form-group
-    = f.label :date_of_birth, class: 'label'
-    = f.date_field :date_of_birth, class: 'field'
+= simple_form_for @user do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :middle_name
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.input :date_of_birth
+  = f.submit
 
