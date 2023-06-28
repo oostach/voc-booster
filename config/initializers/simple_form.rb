@@ -13,6 +13,19 @@ SimpleForm.setup do |config|
   # wrapper, change the order or even add your own to the
   # stack. The options given below are used to wrap the
   # whole input.
+
+  # vertical multi select
+  config.wrappers :date_select, class: :input do |b|
+    b.use :html5
+    b.optional :readonly
+    b.use :label
+    b.wrapper class: 'date-select' do |ba|
+      ba.use :input
+    end
+    b.use :hint,  wrap_with: { tag: :span, class: :hint }
+    b.use :error, wrap_with: { tag: :span, class: :error }
+  end
+
   config.wrappers :default, class: :input,
     hint_class: :field_with_hint, error_class: :field_with_errors, valid_class: :field_without_errors do |b|
     ## Extensions enabled by default
@@ -136,7 +149,7 @@ SimpleForm.setup do |config|
 
   # Custom wrappers for input types. This should be a hash containing an input
   # type as key and the wrapper that will be used for all inputs with specified type.
-  # config.wrapper_mappings = { string: :prepend }
+  config.wrapper_mappings = { date: :date_select }
 
   # Namespaces where SimpleForm should look for custom input classes that
   # override default inputs.
