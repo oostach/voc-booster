@@ -1,0 +1,29 @@
+@import '../../../vendor/assets/stylesheets/reset';
+@import './common/variables';
+@import './common/flex';
+@import './components/form';
+@import './components/button';
+
+body {
+  font: $base-font-size $base-font-family;
+  font-weight: $base-font-weight;
+}
+
+.content {
+  height: 100vh;
+  margin: 0 auto;
+  width: max-content;
+
+  .signup-form {
+    margin: auto 0;
+    .flex {
+      .input:nth-child(n) {
+        margin-right: 10px;
+      }
+
+      .input:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

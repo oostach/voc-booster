@@ -1,0 +1,33 @@
+$form-padding: 5px 10px;
+
+label {
+  display: block;
+  margin-bottom: 2px;
+
+  abbr {
+    color: #ff0000;
+    text-decoration: none;
+  }
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  border: 1px solid #BBBBBB;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+  padding: $form-padding;
+  width: 100%;
+}
+
+select {
+  border: 1px solid #BBBBBB;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: $form-padding;
+}
+
+.input {
+  margin-bottom: 10px;
+}

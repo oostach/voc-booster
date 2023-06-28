@@ -6,6 +6,7 @@ import autoprefixer from 'autoprefixer';
 let config = {
   entryPoints: [
     { out: 'application', in: "app/assets/stylesheets/application.scss" },
+    { out: 'session', in: "app/assets/stylesheets/session.scss" },
     { out: 'application', in: "app/javascript/application.js" },
   ],
   outdir: "app/assets/builds",
@@ -16,7 +17,8 @@ let config = {
   minify: process.env.RAILS_ENV != "development",
   loader: {
     '.ts': 'ts',
-    '.tsx': 'tsx'
+    '.tsx': 'tsx',
+    '.ttf': 'dataurl'
   },
   publicPath: '/assets',
   plugins: [

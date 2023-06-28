@@ -1,6 +1,7 @@
-= simple_form_for @user do |f|
-  = f.input :first_name
-  = f.input :last_name
+= simple_form_for @user, html: { class: 'signup-form' } do |f|
+  .flex
+    = f.input :first_name
+    = f.input :last_name
   = f.input :middle_name
   = f.input :email
   = f.input :password
