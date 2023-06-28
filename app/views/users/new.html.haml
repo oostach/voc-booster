@@ -1,11 +1,12 @@
-= simple_form_for @user, html: { class: 'signup-form' } do |f|
-  .flex
-    = f.input :first_name
-    = f.input :last_name
-  = f.input :middle_name
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.input :date_of_birth
-  = f.submit
-
+.signup-form
+  %h2 Sign up
+  = simple_form_for @user, url: '/signup', html: { data: { turbo: false } } do |f|
+    .flex
+      = f.input :first_name
+      = f.input :last_name
+    = f.input :middle_name
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation, required: true
+    = f.input :date_of_birth
+    = f.submit

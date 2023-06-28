@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
   get '/signout', to: 'sessions#destroy'
-
-  resources :users, only: %i[new create edit update]
+  post '/signup', to: 'users#create'
+  get '/signup', to: 'users#new'
 end

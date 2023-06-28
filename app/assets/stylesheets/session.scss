@@ -16,6 +16,12 @@ body {
 
   .signup-form {
     margin: auto 0;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
     .flex {
       .input:nth-child(n) {
         margin-right: 10px;
