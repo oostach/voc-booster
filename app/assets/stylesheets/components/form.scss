@@ -1,4 +1,4 @@
-$form-padding: 5px 10px;
+@import './../common/variables';
 
 label {
   display: block;
@@ -50,8 +50,12 @@ input[type='submit'] {
 
   .error {
     color: #ff0000;
-    font-size: 14px;
+    font-size: $small-font-size;
     font-style: italic;
+  }
+
+  .hint {
+    font-size: $small-font-size;
   }
 
   .date-select {

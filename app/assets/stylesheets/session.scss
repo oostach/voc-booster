@@ -1,6 +1,7 @@
 @import '../../../vendor/assets/stylesheets/reset';
 @import './common/variables';
 @import './common/flex';
+@import './components/general';
 @import './components/form';
 @import './components/button';
 
@@ -14,12 +15,25 @@ body {
   margin: 0 auto;
   width: max-content;
 
-  .signup-form {
+  .signup-form, .signin-form {
     margin: auto 0;
+
     h2 {
       font-size: 2rem;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       font-weight: bold;
+    }
+
+    .input.password {
+      .hint {
+        display: block;
+        text-align: end;
+        width: 100%;
+      }
+    }
+
+    input[type='submit'] {
+      width: 100%;
     }
 
     .flex {
@@ -30,6 +44,22 @@ body {
       .input:last-child {
         margin-right: 0;
       }
+    }
+  }
+
+  .signin-form {
+    input[type='submit'] {
+      margin: 10px 0 20px;
+    }
+  }
+
+  .signup-form {
+    input[type='submit'] {
+      margin: 20px 0;
+    }
+
+    .privacy-and-terms {
+      text-align: center;
     }
   }
 }

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
 
-  get '/signin', to: 'sessions#new', as: 'signin'
+  get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
   get '/signout', to: 'sessions#destroy'
   post '/signup', to: 'users#create'

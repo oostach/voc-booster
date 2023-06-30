@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  layout 'session'
   skip_before_action :verify_user
-
-  SessionForm = Struct.new(:email, :password)
   def new
-    @session_form = SessionForm.new(SessionForm)
+    @signin_form = SigninForm.new
   end
 
   def create

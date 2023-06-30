@@ -4,4 +4,11 @@
 }
 $base-font-family: Cormorant, sans-serif;
 $base-font-size: 16px;
+$small-font-size: $base-font-size / 1.2;
 $base-font-weight: 400;
+
+// Form styles
+$form-padding: 5px 10px;
+
+// Link
+$link-color: #004295;

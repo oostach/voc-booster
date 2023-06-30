@@ -1,6 +1,9 @@
 .signin-form
-  %h2 Sign in
-  = simple_form_for @session_form, url: '/signin', html: { data: { turbo: false } } do |f|
+  %h2 Login
+  = simple_form_for @signin_form, url: '/signin', html: { data: { turbo: false } } do |f|
     = f.input :email
-    = f.input :password
+    = f.input :password, hint: link_to('Forgot your password?', '#')
     = f.submit
+  .additional-link
+    Not a member?
+    = link_to 'Signup now', signup_path
