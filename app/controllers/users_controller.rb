@@ -2,6 +2,8 @@
 
 class UsersController < ApplicationController
   layout 'session'
+
+  skip_before_action :verify_user
   def new
     @user = User.new
   end
@@ -11,6 +13,7 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in user
+      redirect_to root_path, notice: 'Welcome!'
     else
       render action: :new
     end
