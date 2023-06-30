@@ -1,0 +1,8 @@
+en:
+  simple_form:
+   labels:
+     defaults:
+       password: 'Password'
+     signin_form:
+       email: Email
+       password: Password

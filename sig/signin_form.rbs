@@ -1,0 +1,6 @@
+class SigninForm
+  attr_accessor email: String?
+  attr_accessor password: String?
+
+  def initialize: (email: String?, password: String?) -> void
+end

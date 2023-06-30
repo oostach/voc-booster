@@ -1,0 +1,6 @@
+en:
+  simple_form:
+     hints:
+       defaults:
+         username: 'User name to sign in.'
+         password: 'No special characters, please.'

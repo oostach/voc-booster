@@ -1,0 +1,7 @@
+en:
+  helpers:
+    submit:
+      signin_form:
+        create: Login
+      user:
+        create: Signup
