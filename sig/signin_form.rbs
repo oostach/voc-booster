@@ -1,6 +1,14 @@
 class SigninForm
-  attr_accessor email: String?
-  attr_accessor password: String?
+  @user: User?
 
-  def initialize: (email: String?, password: String?) -> void
+  attr_reader email: String?
+  attr_reader password: String?
+
+  def initialize: (options: ActionController::Parameters) -> void
+  def incorrect_user_or_password?: -> bool
+  def user_error: -> String
+
+  private
+
+  def user: () -> User?
 end

@@ -24,11 +24,13 @@ body {
       font-weight: bold;
     }
 
+    .flash {
+      margin-bottom: 10px;
+    }
+
     .input.password {
-      .hint {
+      .hint, .error {
         display: block;
-        text-align: end;
-        width: 100%;
       }
     }
 
@@ -50,6 +52,12 @@ body {
   .signin-form {
     input[type='submit'] {
       margin: 10px 0 20px;
+    }
+
+    .input.password {
+      .hint, .error {
+        display: inline-block;
+      }
     }
   }
 

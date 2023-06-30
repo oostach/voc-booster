@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      sign_in user
+      sign_in @user
       redirect_to root_path, notice: 'Welcome!'
     else
       render action: :new
