@@ -2,7 +2,9 @@
 
 class SessionsController < ApplicationController
   layout 'session'
-  skip_before_action :verify_user
+  skip_before_action :redirect_not_auth_to_signin, only: %i[new create]
+  before_action :redirect_to_user_root, only: %i[new create]
+
   def new
     @signin_form = SigninForm.new
   end
@@ -12,14 +14,14 @@ class SessionsController < ApplicationController
 
     if @signin_form.valid?
       sign_in @signin_form.user
-      redirect_to root_path, notice: 'Welcome back!'
+      redirect_to_user_root(with_message: 'Welcome back!')
     else
       render action: :new
     end
   end
 
   def destroy
-
+    sign_out
   end
 
   private

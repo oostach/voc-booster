@@ -3,7 +3,9 @@
 class UsersController < ApplicationController
   layout 'session'
 
-  skip_before_action :verify_user
+  skip_before_action :redirect_not_auth_to_signin
+  before_action :redirect_to_user_root
+
   def new
     @user = User.new
   end
