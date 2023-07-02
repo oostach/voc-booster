@@ -11,5 +11,16 @@
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
 
   %body
-    = flash_message
-    = yield
+    %header
+      .user-bar
+        = link_to 'Profile', profile_path, class: 'profiles'
+        = link_to 'Logout', signout_path, class: 'logout'
+      %nav.main-menu
+        %ul.flex.gap
+          %li= link_to 'About', '#'
+          %li= link_to 'Learning', '#'
+          %li= link_to 'My Vocabulary', '#'
+          %li= link_to 'Stats', '#'
+    %main
+      = flash_message
+      = yield

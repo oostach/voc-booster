@@ -10,7 +10,19 @@ a {
   border-radius: 5px;
   color: #2f2f2f;
   background-color: #ccc;
-  padding: 3px 6px;
+  padding: 5px 10px;
+  margin: 10px 0;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 5px;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+  }
 
   &.alert {
     border-color: #730E15;
@@ -19,8 +31,12 @@ a {
   }
 
   &.notice {
-    border-color: #003600;
-    color: #003600;
+    border-color: #016101;
+    color: #016101;
     background-color: #ceffce;
+
+    &:before {
+      background-color: #016101;
+    }
   }
 }

@@ -1,5 +1,6 @@
 @import '../../../vendor/assets/stylesheets/reset';
 @import './common/variables';
+@import './common/flex';
 @import './components/general';
 @import './components/form';
 @import './components/button';
@@ -7,4 +8,29 @@
 body {
   font: $base-font-size $base-font-family;
   font-weight: $base-font-weight;
+}
+
+header {
+  .user-bar {
+    background-color: #ffffee;
+    display: flex;
+    gap: 10px;
+    height: 40px;
+    justify-content: end;
+    align-items: center;
+    padding: 0 30px;
+  }
+
+  .main-menu {
+    display: flex;
+    justify-content: center;
+
+    %ul {
+      gap: 10px;
+    }
+  }
+}
+
+main {
+  padding: 0 30px;
 }
