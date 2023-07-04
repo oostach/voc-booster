@@ -15,7 +15,8 @@ module LayoutHelper
   end
 
   def update_icon_attributes(svg, classes:, options:)
-    svg['class'] = classes
+    classes_arrey = classes.is_a?(String) ? classes.split : classes
+    svg['class'] = classes_arrey.unshift('icon-svg').join(' ')
     options.each { |k, v| svg[k] = v }
   end
 
