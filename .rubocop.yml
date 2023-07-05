@@ -1,5 +1,7 @@
 require:
   - rubocop-rails
+  - rubocop-capybara
+  - rubocop-factory_bot
   # - rubocop-rspec
 
 AllCops:
@@ -12,6 +14,7 @@ AllCops:
     - 'db/schema.rb'
     - 'vendor/bundle/**/*'
     - 'tmp/**/*'
+    - 'config/initializers/simple_form.rb'
 
 Layout/LineLength:
   Max: 160
@@ -38,6 +41,9 @@ Lint/MissingSuper:
 Layout/IndentationConsistency:
   Enabled: true
   EnforcedStyle: indented_internal_methods
+
+Style/ClassAndModuleChildren:
+  Enabled: false
 
 # RSpec/ExampleLength:
 #   Enabled: true

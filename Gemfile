@@ -36,6 +36,8 @@ group :development do
   gem 'web-console'
   gem 'rack-mini-profiler'
   gem 'rubocop-rails'
+  gem 'rubocop-capybara'
+  gem 'rubocop-factory_bot'
   gem 'haml_lint', require: false
 end
 
