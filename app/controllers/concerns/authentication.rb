@@ -14,6 +14,16 @@ module Authentication
     Current.user = user
   end
 
+  def remember(user)
+    user.remember
+    cookies.permanent.signed[:user_id] = user.id
+    cookies.permanent[:remember_token] = user.remember_token
+  end
+
+  def forget(user)
+
+  end
+
   def redirect_not_auth_to_signin
     return if user_signed_in?
 

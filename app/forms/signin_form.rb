@@ -3,11 +3,12 @@
 class SigninForm
   include ActiveModel::Model
 
-  attr_reader :email, :password
+  attr_reader :email, :password, :remember_me
 
   def initialize(options = ActionController::Parameters.new)
-    @email    = options.fetch(:email, '')
-    @password = options.fetch(:password, '')
+    @email       = options.fetch(:email, '')
+    @password    = options.fetch(:password, '')
+    @remember_me = options.fetch(:remember_me, false)
   end
 
   validates :email, :password, presence: true
@@ -23,6 +24,10 @@ class SigninForm
 
   def user_error
     errors.messages_for(:user).join(' ')
+  end
+
+  def remember_me?
+    @remember_me == '1'
   end
 
   private

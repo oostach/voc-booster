@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
     if @signin_form.valid?
       sign_in @signin_form.user
+      # remember @signin_form.user if @signin_form.remember_me?
       redirect_to_user_root(with_message: 'Welcome back!')
     else
       render action: :new
@@ -27,6 +28,6 @@ class SessionsController < ApplicationController
   private
 
     def signin_params
-      params.require(:signin_form).permit(:email, :password)
+      params.require(:signin_form).permit(:email, :password, :remember_me)
     end
 end
