@@ -12,3 +12,16 @@ document.addEventListener('turbo:load', () => {
     closeButton.addEventListener('click', () => flash.remove())
   })
 })
+
+addEventListener('beforeunload', (e) => {
+  e.preventDefault()
+
+  const csrfToken = document.getElementsByName("csrf-token")[0].content
+
+  fetch('/signout', {
+    method: 'GET',
+    headers: {
+      "X-CSRF-Token": csrfToken
+    }
+  })
+})

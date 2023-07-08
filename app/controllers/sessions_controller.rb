@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
     @signin_form = SigninForm.new(signin_params)
 
     if @signin_form.valid?
-      sign_in @signin_form.user
-      # remember @signin_form.user if @signin_form.remember_me?
+      sign_in(@signin_form.user)
+      remember(@signin_form.user) if @signin_form.remember_me?
       redirect_to_user_root(with_message: 'Welcome back!')
     else
       render action: :new

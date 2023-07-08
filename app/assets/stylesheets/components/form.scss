@@ -72,3 +72,11 @@ input[type='submit'] {
     }
   }
 }
+
+label.boolean.optional.checkbox {
+  display: flex;
+
+  input {
+    margin-right: 5px;
+  }
+}
