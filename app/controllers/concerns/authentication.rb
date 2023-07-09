@@ -11,6 +11,7 @@ module Authentication
   def sign_in(user)
     reset_session
     session[:user_id] = user.id
+    Rails.logger.info(user)
     Current.user = user
   end
 
@@ -39,7 +40,16 @@ module Authentication
   end
 
   def current_user
-    Current.user ||= session[:user_id] && User.find_by(id: session[:user_id])
+    Current.user ||= if session[:user_id]
+                       User.find_by(id: session[:user_id])
+                     elsif cookies.permanent[:remember_token] && cookies.permanent.signed[:user_id]
+                       auth_by_token
+                     end
+  end
+
+  def auth_by_token
+    user = User.find_by(id: cookies.permanent.signed[:user_id])
+    user if user.authenticate_remember_token(cookies.permanent[:remember_token])
   end
 
   def user_signed_in?
