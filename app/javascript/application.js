@@ -3,7 +3,7 @@ import '@hotwired/turbo-rails'
 import './controllers'
 import './pages/dashboard'
 
-document.addEventListener('turbo:load', () => {
+const closeFlashHandler = () => {
   const flashes = document.querySelectorAll('.flash')
 
   flashes.forEach((flash) => {
@@ -12,16 +12,12 @@ document.addEventListener('turbo:load', () => {
     closeButton.addEventListener('click', () => flash.remove())
   })
 
-  addEventListener('beforeunload', (e) => {
-    e.preventDefault()
+}
 
-    const csrfToken = document.getElementsByName("csrf-token")[0].content
+document.addEventListener('turbo:load', () => {
+  closeFlashHandler()
+})
 
-    fetch('/signout', {
-      method: 'GET',
-      headers: {
-        "X-CSRF-Token": csrfToken
-      }
-    })
-  })
+document.addEventListener('load', () => {
+  closeFlashHandler()
 })
