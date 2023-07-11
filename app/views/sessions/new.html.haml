@@ -2,13 +2,14 @@
   %h2 Login
   - if @signin_form.incorrect_user_or_password?
     .flash.alert= @signin_form.user_error
+  = flash_message
   = simple_form_for @signin_form, url: '/signin', html: { data: { turbo: false } } do |f|
     = f.input :email
     = f.input :password, hint: false
     = f.input :remember_me, as: :boolean
     = f.submit
   .additional-link
-    = link_to('Forgot your password?', '#')
+    = link_to(t('.forgot_your_password'), '#')
     %br
     Not a member?
-    = link_to 'Signup now', signup_path
+    = link_to 'Sign up now', signup_path

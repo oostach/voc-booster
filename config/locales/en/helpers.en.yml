@@ -2,6 +2,6 @@ en:
   helpers:
     submit:
       signin_form:
-        create: Login
+        create: Sign in
       user:
-        create: Signup
+        create: Sign Up

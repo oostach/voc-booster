@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
     if @signin_form.valid?
       sign_in(@signin_form.user, @signin_form.remember_me?)
-      redirect_to_user_root(with_message: 'Welcome back!')
+      redirect_to_user_root(with_message: t('welcome_back', scope: 'flash.notice'))
     else
       render action: :new
     end

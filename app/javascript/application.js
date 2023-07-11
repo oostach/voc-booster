@@ -2,7 +2,6 @@
 import '@hotwired/turbo-rails'
 import './controllers'
 import { closeFlashHandler } from './components/flash'
-import './pages/dashboard'
 
 document.addEventListener('turbo:load', () => {
   closeFlashHandler()

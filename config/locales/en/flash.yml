@@ -1,0 +1,7 @@
+en:
+  flash:
+    notice:
+      welcome_back: Welcome back!
+    alert:
+      please_signin: Please sign in to access the resource!
+      session_expired: Your session has been expired, please sign in to continue!

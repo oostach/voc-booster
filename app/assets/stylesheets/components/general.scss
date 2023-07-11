@@ -35,6 +35,10 @@ a {
     border-color: #730E15;
     color: #730E15;
     background-color: #ffe4e7;
+
+    &:before {
+      background-color: #730E15;
+    }
   }
 
   &.notice {
