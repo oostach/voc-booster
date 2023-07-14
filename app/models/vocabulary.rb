@@ -3,5 +3,4 @@
 class Vocabulary < ApplicationRecord
   belongs_to :user
   belongs_to :words
-
 end
