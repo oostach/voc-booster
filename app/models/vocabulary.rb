@@ -2,5 +2,7 @@
 
 class Vocabulary < ApplicationRecord
   belongs_to :user
-  belongs_to :words
+  has_many :records, dependent: :destroy
+  has_many :expressions, through: :records
+  belongs_to :language, inverse_of: :vocabulary
 end

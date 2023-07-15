@@ -2,5 +2,4 @@
 
 class Language < ApplicationRecord
   has_many :vocabularies, dependent: :destroy
-
 end
