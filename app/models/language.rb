@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class Language < ApplicationRecord
+  AVAILABLE_LANGUAGES = %i[ukrainian english].freeze
+
   has_many :vocabularies, dependent: :destroy
 end

@@ -12,6 +12,7 @@ gem 'image_processing', '~> 1.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
 gem 'bootsnap', require: false
+gem 'i18n_data'
 
 gem 'sprockets-rails'
 gem 'turbo-rails'

@@ -11,7 +11,7 @@ module Authentication
   def sign_in(user, remember)
     reset_session
     session[:user_id] = user.id
-    session[:expires_at] = Time.zone.now + (remember ? 30.days : 1.minutes)
+    session[:expires_at] = Time.zone.now + (remember ? 30.days : 15.minutes)
     Current.user = user
   end
 

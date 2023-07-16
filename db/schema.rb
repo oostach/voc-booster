@@ -15,14 +15,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_175410) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "rule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "expressions", force: :cascade do |t|
-    t.bigint "language_id"
+    t.bigint "language_id", null: false
     t.bigint "category_id"
     t.string "content", null: false
     t.string "meaning"
@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_175410) do
     t.index ["user_id"], name: "index_vocabularies_on_user_id"
   end
 
+  add_foreign_key "expressions", "languages"
   add_foreign_key "records", "expressions"
   add_foreign_key "records", "vocabularies"
   add_foreign_key "vocabularies", "languages"
