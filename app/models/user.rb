@@ -8,8 +8,10 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :password, presence: true
   validates :password_confirmation, presence: true, if: -> { new_record? }
-  validates :password, length: { in: 6..120 }
+  validates :password, length: { in: 6..120 }, if: -> { password.present? }
   validates :email, presence: true, uniqueness: true
+
+  has_many :vocabularies, dependent: :destroy, inverse_of: :user
 
   def remember_token
     token = SecureRandom.urlsafe_base64

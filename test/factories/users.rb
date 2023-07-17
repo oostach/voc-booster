@@ -9,5 +9,7 @@ FactoryBot.define do
     date_of_birth { Faker::Date.birthday(min_age: 18, max_age: 65) }
     gender { [1, 5, 10].sample }
     occupation { Faker::Job.title }
+    password { 'testtest' }
+    password_confirmation { 'testtest' }
   end
 end

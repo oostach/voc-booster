@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :vocabulary do
-    association :user
-    association :language
+    user { association :user }
+    language { association :language }
   end
 end
