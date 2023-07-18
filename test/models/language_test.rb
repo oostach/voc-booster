@@ -3,7 +3,9 @@
 require 'test_helper'
 
 class LanguageTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'invalid language without name' do
+    language = build(:language, name: '')
+    assert_not language.valid?
+    assert_includes language.errors.messages_for(:name), 'can\'t be blank'
+  end
 end
