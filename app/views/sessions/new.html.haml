@@ -1,5 +1,5 @@
 .signin-form
-  %h2 Login
+  %h2= t('.sign_in')
   - if @signin_form.incorrect_user_or_password?
     .flash.alert= @signin_form.user_error
   = flash_message
@@ -11,5 +11,5 @@
   .additional-link
     = link_to(t('.forgot_your_password'), '#')
     %br
-    Not a member?
-    = link_to 'Sign up now', signup_path
+    = t('.not_a_member')
+    = link_to t('.sign_up'), signup_path

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
   get '/signout', to: 'sessions#destroy'
-  post '/signup', to: 'users#create'
-  get '/signup', to: 'users#new'
+  post '/signup', to: 'registration#create'
+  get '/signup', to: 'registration#new'
 
   resource :profile
 end

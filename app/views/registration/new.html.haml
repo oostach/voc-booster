@@ -1,5 +1,5 @@
 .signup-form
-  %h2 Signup
+  %h2= t('.sign_up')
   = simple_form_for @user, url: '/signup', html: { data: { turbo: false } } do |f|
     .flex
       = f.input :first_name
@@ -9,10 +9,8 @@
     = f.input :password
     = f.input :password_confirmation, required: true
     = f.input :date_of_birth
-    .privacy-and-terms
-      By clicking Sign up, you agree to our <br/>
-      <a href='#'>Privacy Policy</a> and <a href='#'>Terms of Use</a>.
+    .privacy-and-terms= t('.privacy_message_html', privacy_link: '#', term_link: '#')
     = f.submit
   .additional-link
-    Already have an account?
-    = link_to 'Login', signin_path
+    = t('.have_an_account')
+    = link_to t('.sign_in'), signin_path

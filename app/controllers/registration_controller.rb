@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class RegistrationController < ApplicationController
   layout 'session'
 
   skip_before_action :redirect_not_auth_to_signin
