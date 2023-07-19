@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   has_secure_password
-  has_secure_password :remember_token, validations: false
+  has_secure_password :confirmation_token, validations: false
 
   enum gender: { female: 1, male: 5, other: 10 }
 

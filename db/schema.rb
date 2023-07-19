@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_14_175410) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_18_112820) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,7 +58,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_175410) do
     t.string "occupation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "confirmation_token_digest"
+    t.bigint "language_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["language_id"], name: "index_users_on_language_id"
   end
 
   create_table "vocabularies", force: :cascade do |t|
@@ -73,6 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_175410) do
   add_foreign_key "expressions", "languages"
   add_foreign_key "records", "expressions"
   add_foreign_key "records", "vocabularies"
+  add_foreign_key "users", "languages"
   add_foreign_key "vocabularies", "languages"
   add_foreign_key "vocabularies", "users"
 end
