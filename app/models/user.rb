@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  CONFIRMATION_TOKEN_EXPIRATION = 60.minutes
+
   has_secure_password
   has_secure_password :confirmation_token, validations: false
 
@@ -13,9 +15,11 @@ class User < ApplicationRecord
 
   has_many :vocabularies, dependent: :destroy, inverse_of: :user
 
-  def remember_token
-    token = SecureRandom.urlsafe_base64
-    update(remember_token: token)
-    token
+  def send_confirmation_message
+    RegistrationMailer.with(user: self).confirmation_email.deliver_later
+  end
+
+  def generate_confirmation_token
+
   end
 end

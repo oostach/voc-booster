@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
-  get '/signout', to: 'sessions#destroy'
+  delete '/signout', to: 'sessions#destroy'
+
   post '/signup', to: 'registration#create'
   get '/signup', to: 'registration#new'
+  get '/confirm/:signed_id/:token', to: 'registration#confirm'
 
   resource :profile
 end

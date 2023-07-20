@@ -14,11 +14,15 @@ class RegistrationController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      sign_in @user
-      redirect_to root_path, notice: t('sign_up_message', scope: 'flash.notice')
+      @user.send_confirmation_message
+      redirect_to signin_path, notice: t('confirmation_message', scope: 'flash.notice')
     else
       render action: :new
     end
+  end
+
+  def confirmation
+    @user =
   end
 
   private

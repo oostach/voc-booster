@@ -1,0 +1,4 @@
+en:
+  registration_mailer:
+    confirmation_email:
+      confirmation_subject: Welcome to VocBooster! Please Confirm Your Email Address
