@@ -9,4 +9,9 @@ class ActiveSupport::TestCase
   parallelize(workers: :number_of_processors)
 
   include FactoryBot::Syntax::Methods
+  include Rails.application.routes.url_helpers
+
+  def default_url_options
+    Rails.application.config.action_mailer.default_url_options
+  end
 end

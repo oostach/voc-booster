@@ -15,7 +15,21 @@ class User < ApplicationRecord
 
   has_many :vocabularies, dependent: :destroy, inverse_of: :user
 
+  after_create :send_confirmation_message
+
   def send_confirmation_message
     RegistrationMailer.with(user: self).confirmation_email.deliver_later
+  end
+
+  def confirmation_token_valid?
+    created_at + CONFIRMATION_TOKEN_EXPIRATION > Time.zone.now
+  end
+
+  def confirm!
+    update(confirmation_token: nil)
+  end
+
+  def confirmed?
+    confirmation_token.blank?
   end
 end

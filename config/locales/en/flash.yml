@@ -5,5 +5,6 @@ en:
       sign_up_message: Welcome!
       confirmation_message: Thank you for signing up with VocBooster! 🎉. Please confirm your email before signing in.
     alert:
-      please_signin: Please sign in to access the resource!
-      session_expired: Your session has been expired, please sign in to continue!
+      please_signin: Please sign in to access the resource.
+      session_expired: Your session has been expired, please sign in to continue.
+      confirmation_incorrect: Confirmation token is invalid.

@@ -37,4 +37,26 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.valid?
     assert_includes user.errors.full_messages, 'Password is too short (minimum is 6 characters)'
   end
+
+  test 'brand new user is not confirmed' do
+    user = create(:user)
+    assert_not_empty user.confirmation_token
+    assert_not user.confirmed?, true
+  end
+
+  test 'should confirm user' do
+    user = create(:user)
+    user.confirm!
+    assert_nil user.confirmation_token
+    assert user.confirmed?, true
+  end
+
+  test 'should not generate new confirmation token after update user' do
+    user = create(:user)
+    user.confirm!
+    assert_nil user.confirmation_token
+    user.update(first_name: 'Test Name 1')
+    assert_nil user.confirmation_token
+    assert_equal user.first_name, 'Test Name 1'
+  end
 end

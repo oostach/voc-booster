@@ -14,15 +14,19 @@ class RegistrationController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      @user.send_confirmation_message
       redirect_to signin_path, notice: t('confirmation_message', scope: 'flash.notice')
     else
       render action: :new
     end
   end
 
-  def confirmation
-    @user =
+  def confirm
+    @user = User.find_by(confirmation_token: params[:confirmation_token])
+    if @user
+
+    else
+      redirect_to signin_path, notice: t('confirmation_incorrect', scope: 'flash.alert')
+    end
   end
 
   private

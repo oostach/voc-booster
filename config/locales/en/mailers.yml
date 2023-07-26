@@ -1,4 +1,12 @@
 en:
   registration_mailer:
     confirmation_email:
-      confirmation_subject: Welcome to VocBooster! Please Confirm Your Email Address
+      confirmation_subject: Welcome to VocBooster! Please Confirm Your Email Address.
+      dear_user: Dear %{first_name},
+      thank_you_for_signing_up: "Thank you for signing up at VocBooster. We're thrilled to have you join our community! To complete your registration and gain access to our exciting services, please verify your email address by clicking the confirmation link below:"
+      confirmation_link: Confirmation link
+      by_confirming_your_email_html: "By confirming your email, you ensure that your account is secure and active. This step is essential for your account's protection and will enable us to send you important updates, promotions, and personalized content.<br/>If the link above doesn't work, you can copy and paste the following URL into your browser:"
+      we_can_not_wait_for_you: We can't wait for you to explore all the fantastic features that VocBooster has to offer. Our dedicated team has worked hard to provide you with a seamless and enjoyable experience.
+      need_assistance_with_anything: If you encounter any issues during the sign-up process or need assistance with anything, please don't hesitate to reach out to our support team at [Customer Support Phone Number] or [Customer Support Email Address]. We are always ready to help!
+      thank_you: Thank you once again for choosing VocBooster. We look forward to seeing you on our platform soon.
+      voc_booster_address_html: Best regards,<br/><br/>[Your Name]<br/>Customer Support Team<br/>VocBooster<br/>[Your Contact Information]

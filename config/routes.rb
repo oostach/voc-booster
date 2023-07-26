@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   post '/signup', to: 'registration#create'
   get '/signup', to: 'registration#new'
-  get '/confirm/:signed_id/:token', to: 'registration#confirm'
+  get '/confirm/:token', to: 'registration#confirm', as: :confirmation
 
   resource :profile
 end

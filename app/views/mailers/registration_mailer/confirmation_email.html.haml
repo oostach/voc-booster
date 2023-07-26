@@ -1,23 +1,17 @@
-= Dear @user.firstname,
-
-Thank you for signing up at VocBooster. We're thrilled to have you join our community! To complete your registration and gain access to our exciting services, please verify your email address by clicking the confirmation link below:
-
-= link_to 'Confirmation link', url_for(@confirmation_link)
-
-By confirming your email, you ensure that your account is secure and active. This step is essential for your account's protection and will enable us to send you important updates, promotions, and personalized content.<br />
-If the link above doesn't work, you can copy and paste the following URL into your browser:
-
-= @confirmation_link
-
-We can't wait for you to explore all the fantastic features that [Your Company Name] has to offer. Our dedicated team has worked hard to provide you with a seamless and enjoyable experience.
-
-If you encounter any issues during the sign-up process or need assistance with anything, please don't hesitate to reach out to our support team at [Customer Support Phone Number] or [Customer Support Email Address]. We are always ready to help!
-
-Thank you once again for choosing [Your Company Name]. We look forward to seeing you on our platform soon.
-
-Best regards,
-
-[Your Name]
-Customer Support Team
-[Your Company Name]
-[Your Contact Information]
+= t('.dear_user', first_name: @user.first_name)
+%br
+= t('.thank_you_for_signing_up')
+%br
+= link_to t('.confirmation_link'), confirmation_url(@user.confirmation_token)
+%br
+= t('.by_confirming_your_email_html')
+%br
+= confirmation_url(@user.confirmation_token)
+%br
+= t('.we_can_not_wait_for_you')
+%br
+= t('.need_assistance_with_anything')
+%br
+= t('.thank_you')
+%br
+= t('.voc_booster_address_html')
