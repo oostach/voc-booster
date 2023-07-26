@@ -4,7 +4,7 @@ class User < ApplicationRecord
   CONFIRMATION_TOKEN_EXPIRATION = 60.minutes
 
   has_secure_password
-  has_secure_password :confirmation_token, validations: false
+  has_secure_token :confirmation_token, length: 36
 
   enum gender: { female: 1, male: 5, other: 10 }
 
@@ -17,9 +17,5 @@ class User < ApplicationRecord
 
   def send_confirmation_message
     RegistrationMailer.with(user: self).confirmation_email.deliver_later
-  end
-
-  def generate_confirmation_token
-
   end
 end

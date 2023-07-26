@@ -58,8 +58,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_112820) do
     t.string "occupation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "confirmation_token_digest"
+    t.string "confirmation_token", limit: 36
     t.bigint "language_id"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["language_id"], name: "index_users_on_language_id"
   end
