@@ -13,6 +13,7 @@ class SigninForm
 
   validates :email, :password, presence: true
   validate :user_exists_and_authenticates
+  validate :user_confirmed
 
   def user
     @user ||= User.find_by(email: @email)
@@ -31,6 +32,12 @@ class SigninForm
   end
 
   private
+
+    def user_confirmed
+      return if user.confirmed?
+
+      errors.add(:user, I18n.t('.confirm_your_email', scope: 'forms.signin_form'))
+    end
 
     def user_exists_and_authenticates
       return if email.blank? || password.blank?

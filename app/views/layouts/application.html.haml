@@ -14,7 +14,7 @@
     %header
       .user-bar
         = link_to 'Profile', profile_path, class: 'profiles'
-        = link_to 'Logout', signout_path, class: 'logout'
+        = link_to 'Logout', signout_path, class: 'logout', data: { "turbo-method": :delete }
       %nav.main-menu
         %ul.flex.gap
           %li= link_to 'Dashboard', root_path

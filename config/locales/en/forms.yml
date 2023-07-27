@@ -1,0 +1,4 @@
+en:
+  forms:
+    signin_form:
+      confirm_your_email: Please confirm your email before sign in.
