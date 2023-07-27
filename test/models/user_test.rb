@@ -59,4 +59,12 @@ class UserTest < ActiveSupport::TestCase
     assert_nil user.confirmation_token
     assert_equal user.first_name, 'Test Name 1'
   end
+
+  test 'should check if a confirmation token is outdated' do
+    user = create(:user)
+    assert_equal user.confirmation_token_outdated?, false
+    travel 61.minutes do
+      assert_equal user.confirmation_token_outdated?, true
+    end
+  end
 end

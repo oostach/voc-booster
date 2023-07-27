@@ -21,12 +21,12 @@ class User < ApplicationRecord
     RegistrationMailer.with(user: self).confirmation_email.deliver_later
   end
 
-  def confirmation_token_valid?
-    created_at + CONFIRMATION_TOKEN_EXPIRATION > Time.zone.now
+  def confirmation_token_outdated?
+    created_at + CONFIRMATION_TOKEN_EXPIRATION < Time.zone.now
   end
 
   def confirm!
-    update(confirmation_token: nil)
+    update_attribute(:confirmation_token, nil) # rubocop:disable Rails/SkipsModelValidations
   end
 
   def confirmed?

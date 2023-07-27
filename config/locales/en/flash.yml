@@ -4,6 +4,8 @@ en:
       welcome_back: Welcome back!
       sign_up_message: Welcome!
       confirmation_message: Thank you for signing up with VocBooster! 🎉. Please confirm your email before signing in.
+      confirmation_successful: Your email address has been successfully confirmed. Welcome to our community! 🎉🎉🎉
+      confirmation_outdated: We're sorry, but the confirmation link has expired or is outdated. Please request a new confirmation link.
     alert:
       please_signin: Please sign in to access the resource.
       session_expired: Your session has been expired, please sign in to continue.

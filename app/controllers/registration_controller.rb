@@ -21,12 +21,12 @@ class RegistrationController < ApplicationController
   end
 
   def confirm
-    @user = User.find_by(confirmation_token: params[:confirmation_token])
-    if @user
+    @user = User.find_by(confirmation_token: params[:token])
+    return redirect_to(signin_path, alert: t('confirmation_incorrect', scope: 'flash.alert')) unless @user
+    return redirect_to(signin_path, alert: t('confirmation_outdated', scope: 'flash.alert')) if @user.confirmation_token_outdated?
 
-    else
-      redirect_to signin_path, notice: t('confirmation_incorrect', scope: 'flash.alert')
-    end
+    @user.confirm!
+    redirect_to root_path, notice: t('confirmation_successful', scope: 'flash.alert')
   end
 
   private
