@@ -45,6 +45,9 @@ Layout/IndentationConsistency:
 Style/ClassAndModuleChildren:
   Enabled: false
 
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+
 # RSpec/ExampleLength:
 #   Enabled: true
 #   Exclude:

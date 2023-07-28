@@ -11,6 +11,9 @@ FactoryBot.define do
     occupation { Faker::Job.title }
     password { 'testtest' }
     password_confirmation { 'testtest' }
-    confirmation_token { nil }
+
+    trait :confirmed do
+      after :create, &:confirm!
+    end
   end
 end
