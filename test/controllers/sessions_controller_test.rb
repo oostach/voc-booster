@@ -60,4 +60,10 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
       assert_equal 'Your session has been expired, please sign in to continue.', flash[:alert]
     end
   end
+
+  test 'extend session with remember_me option to 30 days' do
+    user = create(:user, :confirmed)
+    sign_in_as(user, { remember_me: '1' })
+    assert 30, Time.zone.parse(session[:expires_at]) - Time.zone.now
+  end
 end

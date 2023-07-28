@@ -20,6 +20,7 @@ class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
   include Rails.application.routes.url_helpers
   include Authenticator
+  include CommonExtension
 
   def default_url_options
     Rails.application.config.action_mailer.default_url_options

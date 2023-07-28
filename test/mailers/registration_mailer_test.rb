@@ -3,14 +3,8 @@
 require 'test_helper'
 
 class RegistrationMailerTest < ActionMailer::TestCase
-  test 'should send confirmation email after create' do
-    assert_emails 1 do
-      create(:user)
-    end
-  end
-
   test 'confirmation email' do
-    user = create(:user)
+    user = disable_callback_for(User, :create, :after, :send_confirmation_message) { create(:user) }
     email = RegistrationMailer.with(user: user).confirmation_email
 
     assert_emails 1 do
@@ -25,5 +19,11 @@ class RegistrationMailerTest < ActionMailer::TestCase
     assert_match "Dear #{user.first_name},", encoded_body
     assert_match confirmation_url(user.confirmation_token), encoded_body
     assert_match 'Thank you once again for choosing VocBooster. We look forward to seeing you on our platform soon.', encoded_body
+  end
+
+  test 'should send confirmation email after create' do
+    assert_emails 1 do
+      create(:user)
+    end
   end
 end
