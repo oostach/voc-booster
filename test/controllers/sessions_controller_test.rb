@@ -36,4 +36,28 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_redirected_to signin_path
   end
+
+  test 'should update session expiration on each request' do
+    user = create(:user, :confirmed)
+    sign_in_as(user, { remember_me: '0' })
+
+    travel 10.minutes do
+      assert_equal 5.minutes.from_now.strftime('%H:%M'), session[:expires_at].round.strftime('%H:%M')
+      get root_path
+      assert_equal 15.minutes.from_now.strftime('%H:%M'), session[:expires_at].round.strftime('%H:%M')
+    end
+  end
+
+  test 'should auto logout user if session is expired' do
+    user = create(:user, :confirmed)
+    sign_in_as(user, { remember_me: '0' })
+    get root_path
+    assert_response :success
+
+    travel 20.minutes do
+      get root_path
+      assert_redirected_to signin_path
+      assert_equal 'Your session has been expired, please sign in to continue.', flash[:alert]
+    end
+  end
 end

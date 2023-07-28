@@ -10,4 +10,3 @@ en:
       session_expired: Your session has been expired, please sign in to continue.
       confirmation_incorrect: Confirmation token is invalid.
       confirmation_outdated: We're sorry, but the confirmation link has expired or is outdated. Please request a new confirmation link.
-      # email_not_confirmed: Your email has not confirmed yet. Please visit your inbox to confirm email.
