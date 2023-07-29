@@ -1,1 +1,17 @@
-%h1 Profile
+.flex
+  = render UserPhoto::ProfileComponent.new(user: current_user)
+  .user-details
+    %h3= current_user.full_name
+    .flex
+      %strong Email:
+      %span= current_user.email
+    .flex
+      %strong Date of birth:
+      %span= current_user.date_of_birth
+    .flex
+      %strong Gender:
+      %span= current_user.gender
+    .flex
+      %strong Occupation:
+      %span= current_user.occupation
+

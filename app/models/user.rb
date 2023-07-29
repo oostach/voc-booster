@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_secure_password
   has_secure_token :confirmation_token, length: 36
+  has_one_attached :photo
 
   enum gender: { female: 1, male: 5, other: 10 }
 
@@ -31,5 +32,9 @@ class User < ApplicationRecord
 
   def confirmed?
     confirmation_token.blank?
+  end
+
+  def full_name
+    [first_name, last_name].compact.join(' ')
   end
 end

@@ -6,6 +6,8 @@
 @import './components/form';
 @import './components/button';
 
+@import '../../components/application_component';
+
 body {
   font: $base-font-size $base-font-family;
   font-weight: $base-font-weight;

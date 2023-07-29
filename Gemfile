@@ -19,6 +19,7 @@ gem 'turbo-rails'
 gem "stimulus-rails"
 gem 'haml-rails'
 gem 'simple_form'
+gem "view_component"
 
 # gem "jsbundling-rails"
 # gem "sassc-rails"

@@ -1,0 +1,5 @@
+.user-photo{ class: size }
+  - if photo.present?
+    = image_tag photo.url, size: '24x24', alt: 'User photo'
+  - else
+    .user-initials= initials
