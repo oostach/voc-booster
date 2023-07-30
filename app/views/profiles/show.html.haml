@@ -1,5 +1,8 @@
 .flex
-  = render UserPhoto::ProfileComponent.new(user: current_user)
+  %section.profile-photo
+    = render UserPhoto::ProfileComponent.new(user: current_user)
+    = turbo_frame_tag 'photo-edit' do
+      = link_to 'Edit photo', edit_profile_photo_path
   .user-details
     %h3= current_user.full_name
     .flex
