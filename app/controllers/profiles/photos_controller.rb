@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Profile::PhotosController < ApplicationController
+class Profiles::PhotosController < ApplicationController
   def edit
   end
 
